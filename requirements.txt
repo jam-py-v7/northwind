@@ -5,5 +5,5 @@ pandas
 matplotlib
 numpy
 datetime
-pprint
-secrets
+#pprint
+#secrets
