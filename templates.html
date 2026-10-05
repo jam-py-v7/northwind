@@ -1,0 +1,587 @@
+<div class="default-top-view">
+    <div class="form-header">
+        <button id="new-btn" class="btn btn-secondary" type="button">
+            <i class="bi-plus-square"></i> New<small class="muted">&nbsp;[Ctrl+Ins]</small>
+        </button>
+        <button id="edit-btn" class="btn btn-secondary" type="button">
+            <i class="bi-pencil-square"></i> Edit
+        </button>
+        <div id="report-btn" class="dropdown">
+            <a class="btn btn-secondary dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                <i class="bi bi-printer"></i> 
+                Reports
+            </a>
+            <ul class="dropdown-menu">
+            </ul>
+        </div>
+        <div class="position-absolute top-right">
+            <button id="delete-btn" class="btn btn-danger" type="button">
+                <i class="bi-trash"></i> Delete<small class="muted">&nbsp;[Ctrl+Del]</small>
+            </button>
+        </div>
+    </div>
+    <div class="card-body form-body">
+        <div class="view-table"></div>
+        <div class="view-detail"></div>
+    </div>
+</div>
+
+<div class="default-view">
+    <div class="form-body">
+        <div class="view-table"></div>
+        <div class="view-detail"></div>
+    </div>
+    <div class="form-footer">
+        <div id="report-btn" class="btn dropdown dropup">
+            <a class="btn btn-secondary dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                <i class="bi bi-printer"></i> 
+                Reports
+            </a>
+            <ul class="dropdown-menu">
+            </ul>
+        </div>
+        <div class="position-absolute top-left">
+            <button id="delete-btn" class="btn btn-danger" type="button">
+                <i class="bi-trash"></i> Delete<small class="muted">&nbsp;[Ctrl+Del]</small>
+            </button>
+        </div>
+        <button id="edit-btn" class="btn btn-secondary" type="button">
+            <i class="bi-pencil-square"></i> Edit
+        </button>
+        <button id="new-btn" class="btn btn-secondary" type="button">
+            <i class="bi-plus-square"></i> New<small class="muted">&nbsp;[Ctrl+Ins]</small>
+        </button>
+    </div>
+</div>
+
+<div class="default-top-edit">
+    <div class="form-header">            
+        <button type="button" id="ok-btn" class="btn btn-primary">
+            <i class="bi bi-check-square"></i> OK<small class="muted">&nbsp;[Ctrl+Enter]</small>
+        </button>
+        <button type="button" id="cancel-btn" class="btn btn-secondary">
+            <i class="bi bi-x-square"></i> Cancel
+        </button>
+    </div>
+    <div class="form-body">
+        <div class="edit-body"></div>
+        <div class="edit-detail"></div>
+    </div>
+</div>
+
+<div class="default-edit">
+    <div class="form-body">
+        <div class="edit-body"></div>
+        <div class="edit-detail"></div>
+    </div>
+    <div class="form-footer">
+        <button type="button" id="ok-btn" class="btn btn-primary">
+            <i class="bi bi-check-square"></i> OK<small class="muted">&nbsp;[Ctrl+Enter]</small>
+        </button>
+        <button type="button" id="cancel-btn" class="btn btn-secondary">
+            <i class="bi bi-x-square"></i> Cancel
+        </button>
+    </div>
+</div>
+
+<div class="default-param">
+    <div class="form-body">
+        <div class="edit-body">
+        </div>
+    </div>
+    <div class="form-footer">
+        <div class="position-absolute top-left">
+            <div id="report_sppiner" class="spinner-border" style="width: 3rem; height: 3rem; padding-right: '100px;" role="status">
+              <span class="visually-hidden">Generating report...</span>
+            </div>
+        </div>
+        <select id='extension' class="form-select" style="width: 5rem">
+            <option>pdf</option>
+            <option>xlsx</option>
+            <option>xls</option>
+            <option>ods</option>
+            <option>html</option>
+        </select>
+        <button type="button" id="ok-btn" class="btn btn-primary">
+            <i class="bi bi-printer"></i> Print
+        </button>
+        <button type="button" id="cancel-btn" class="btn btn-secondary">
+            <i class="bi bi-x-square"></i> Close
+        </button>
+    </div>
+</div>
+
+<div class="default-filter">
+    <div class="form-body">
+        <div class="edit-body">
+        </div>
+    </div>
+    <div class="form-footer">
+        <button type="button" id="ok-btn" class="btn btn-primary">
+            <i class="bi bi-filter"></i> Apply
+        </button>
+        <button type="button" id="cancel-btn" class="btn btn-secondary">
+            <i class="bi bi-x-square"></i> Close
+        </button>
+    </div>
+</div>
+
+<div class="dashboard-view">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">                
+                <canvas id="orders-canvas"></canvas>                
+                <div id="orders-table"></div>
+            </div>                            
+            <div class="col-lg-6">                        
+                <canvas id="categories-canvas"></canvas>
+                <div id="categories-table"></div>
+            </div>                
+        </div>
+    </div>
+</div>
+
+<!-- Home page start -->
+<div class="home_page-view">
+    <div class="form-body">
+        <div class="row">
+            <div class ="col-md-3">
+                <div class="d-flex flex-column flex-shrink-0 p-2 bg-dark" style="flex-grow: 1;">
+                    <a href="#" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-light text-decoration-none">
+                        <svg class="bi me-2" width="30" height="32"></svg><i class="bi bi-box-arrow-up-right"></i><span class="fs-4">&nbsp;
+                        Quick links</span>
+                    </a>
+                    <hr>
+                        
+                    <ul class="nav nav-pills flex-column mb-auto">
+                        <span class="badge bg-primary">Sales</span>
+                        <li class="nav-item">
+                            <a id="orders" href="#" class="nav-link link-light">
+                                <svg class="bi me-2" width="16" height="16"></svg><i class="bi bi-cart-check"></i>&nbsp;
+                                View Orders <span class="badge bg-danger">🔔</span>
+                            </a>
+                        </li>
+                            
+                        <li>
+                            <a id="invoices" href="#" class="nav-link link-light">
+                                <svg class="bi me-2" width="16" height="16"></svg><i class="bi bi-files"></i>&nbsp;
+                                View Invoices
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a id="customers" href="#" class="nav-link link-light">
+                                <svg class="bi me-2" width="16" height="16"></svg><i class="bi bi-people-fill"></i>&nbsp;
+                                View Customers
+                            </a>
+                        </li>
+                        <hr>
+                        
+                        <span class="badge bg-primary">Warehouse</span>
+                        <li>
+                            <a id="inventory" href="#" class="nav-link link-light" aria-current="page">
+                                <svg class="bi me-2" width="16" height="16"></svg><i class="bi bi-list-check"></i>&nbsp; 
+                                View Inventory
+                            </a>
+                        </li>
+                
+                        <li>
+                            <a id="purchase_orders" href="#" class="nav-link link-light">
+                                <svg class="bi me-2" width="16" height="16"></svg><i class="bi bi-shop"></i>&nbsp;
+                                View Purchase Orders
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a id="inventory_transactions" href="#" class="nav-link link-light">
+                                <svg class="bi me-2" width="16" height="16"></svg><i class="bi bi-arrow-left-right"></i>&nbsp;
+                                View Inventory Transactions
+                            </a>
+                        </li>
+                        <hr>
+                        
+                        <span class="badge bg-primary">Connections</span>
+                        <li>
+                            <a id="products" href="#" class="nav-link link-light">
+                                <svg class="bi me-2" width="16" height="16"></svg><i class="bi bi-bag"></i>&nbsp;
+                                View Products
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a id="suppliers" href="#" class="nav-link link-light">
+                                <svg class="bi me-2" width="16" height="16"></svg><i class="bi bi-person-rolodex"></i>&nbsp;
+                                View Suppliers
+                            </a>
+                        </li>
+                            
+                        <li>
+                            <a id="employees" href="#" class="nav-link link-light">
+                                <svg class="bi me-2" width="16" height="16"></svg><i class="bi bi-person-circle"></i>&nbsp;
+                                View Employees
+                            </a>
+                        </li>
+                            
+                        <li>
+                            <a id="shippers" href="#" class="nav-link link-light">
+                                <svg class="bi me-2" width="16" height="16"></svg><i class="bi bi-truck"></i>&nbsp;
+                                View Shippers
+                            </a>
+                        </li>
+                        <hr>
+                        
+                        <span class="badge bg-primary">Reports</span>
+                        <li>
+                            <a id="sales_reports" href="#" class="nav-link link-light">
+                                <svg class="bi me-2" width="16" height="16"></svg><i class="bi bi-graph-up"></i>&nbsp;
+                                Sales Report
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a id="customers_reports" href="#" class="nav-link link-light">
+                                <svg class="bi me-2" width="16" height="16"></svg><i class="bi bi-pie-chart-fill"></i>&nbsp;
+                                Customers Report
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a id="shippers_reports" href="#" class="nav-link link-light">
+                                <svg class="bi me-2" width="16" height="16"></svg><i class="bi bi-bar-chart-fill"></i>&nbsp;
+                                Shippers Report
+                            </a>
+                        </li>
+                        <hr>
+                            
+                        <li>
+                            <a id="app_instructions" href="#" class="nav-link link-light">
+                                <svg class="bi me-2" width="16" height="16"></svg><i class="bi bi-question-circle-fill"></i>&nbsp;
+                                How the app works?
+                            </a>
+                        </li>
+                        <hr>
+                    </ul>
+                </div>
+            </div> <!-- col end-->
+            
+            <div class="col-md-8" > 
+                <ul class="nav nav-tabs" id="home_page_tabs" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <a class="nav-link active" aria-current="page" href="#active_orders_tab">Active orders</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="#inventory_tab">Inventory to reorder</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="#analytics_products_tab">Products analytics</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="#analytics_category_tab">Categories analytics</a>
+                    </li>
+                </ul>
+            
+                <!-- tab content start -->
+                <div class="tab-content">
+                    <div class="tab-pane active" id="active_orders_tab">
+                        <div class="row">
+                            <div class="top_table p-2">
+                            <div class="active_orders"></div> 
+                            <div id="active_orders"></div> 
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="tab-pane" id="inventory_tab">
+                        <div class="bottom_table p-2">
+                            <div class="inventory_to_reorder"></div>
+                            <div id="inventory_list-table"></div>
+                            </div>
+                    </div>
+        
+                    <div class="tab-pane" id="analytics_products_tab">
+                        <div class="row">
+                            <canvas id="orders-canvas"></canvas>                
+                            <div id="orders-table"></div>
+                        </div>
+                    </div>
+                          
+                    <div class="tab-pane" id="analytics_category_tab">
+                        <canvas id="categories-canvas"></canvas>
+                        <div id="categories-table"></div>
+                    </div>      
+                </div>
+                <!-- tab content start -->
+            </div>
+        </div>  <!-- row end -->
+    </div>  <!-- form end -->
+</div>
+<!-- Home page end -->
+
+<!-- chart start -->
+<div class="po_chart-view">
+    <div class="row-fluid">
+        <div class="form-body" height="1000">   
+            <div class="po_chart_place">
+                <canvas id="po_chart-canvas"></canvas>
+                <div id="po_chart-table"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- chart end -->
+
+<div class="analytics-view">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">                
+                <canvas id="orders-canvas"></canvas>                
+                <div id="orders-table"></div>
+            </div>                            
+            <div class="col-lg-6">                        
+                <canvas id="categories-canvas"></canvas>
+                <div id="categories-table"></div>
+            </div>                
+        </div>
+    </div>
+</div>
+<!-- Products edit start -->
+<div class="products-edit">
+    <div class="form-body">
+        <div class="edit-body"></div>
+        <div class="edit-detail"></div>
+        <div class="purchase_details"></div>
+    </div>
+    <div class="form-footer">
+        <button type="button" id="ok-btn" class="btn btn-primary">
+            <i class="bi bi-check-square"></i> OK<small class="muted">&nbsp;[Ctrl+Enter]</small>
+        </button>
+        <button type="button" id="cancel-btn" class="btn btn-secondary">
+            <i class="bi bi-x-square"></i> Cancel
+        </button>
+    </div>
+</div>
+<!-- Products edit end -->
+
+<div class="about">
+    <a href="https://jampyapplicationbuilder.com/" target="_blank"><h3>Jam.py Appliction Builder</h3></a>
+    <p>Welcome to Northwind Traders v7, migrated from MS Access.</p>
+
+    <p><b>This application is now @ Windows 10/11 App store! Search for jam.py</b></p>    
+
+    <p>Some Forms are Jam default view, have a look at other demos!</p>
+    <p>Migration took about 10 hours, including the report.</p>
+    <p>Portable Demo for <a href=https://github.com/platipusica/jampy-exe>Win64</a> with the data pump is available to test the Jam speed. Point the browser to <a href="http://127.0.0.1:8080/">127.0.0.1:8080</a> and off u go!</p>   
+    <p>Video about the migration is <a href="https://www.youtube.com/watch?v=Pa0wRvMt1Qk/">here</a>.</p>
+    <p>Help and Export is <a href="https://jampyapplicationbuilder.com/docs/admin/project/metadata_file.html?highlight=import#">available</a>.</p>
+    <p>Install jam.py-v7 and import the file. Check Task/Client for commented code.</p>
+    <p>Authentication is not enabled. Please see "Chg. password" tab.</p>                
+    <p>App Export is available.</p>
+    <p>Thanks for visiting!</p>
+
+    <p>By <a href="https://www.linkedin.com/in/danijel-kaurin-956b1a218/">Danijel Kaurin</a>  & <a href="https://www.linkedin.com/company/jam-py">Dean D. Babic</a></p>
+    <p>2024</p>
+</div>
+
+<div class="change_password-edit">
+    <div class="form-body">
+        <div class="edit-body"></div>
+    </div>
+    <div>  
+        <div id="new_password_strength_meter" class="mx-2">
+            <p class="text-center text-info">
+            Please add password and password_hash to Employees table to enable this feature. Your password needs to be strong; a wide-range of letters, numbers and symbols, or long passwords will achieve this.  Passwords with more than 80 bits of entropy should meet this requirement. You'll see the bar sliding!<br>
+            </p>
+        </div>    
+        <div id="meter1"></div>
+    </div>
+    <div class="form-footer">
+        <button type="button" id="ok-btn" class="btn btn-primary">
+            <i class="bi bi-check-square"></i> Confirm
+        </button>
+        <button type="button" id="cancel-btn" class="btn btn-secondary">
+            <i class="bi bi-x-square"></i> Cancel
+        </button>
+    </div>
+</div>    
+
+
+<!-- pivot table start -->
+<div class="pivot_table-view">
+    <div class="form-body" id="pivot"></div>
+    <button type="button" id="export_pivot" class="btn btn-primary expanded-btn">
+        <i class="icon-o-download"></i>&nbsp; Download
+    </button>
+
+</div>
+
+<div class="rfm_analysis-view">
+    <div class="form-body">
+        <div class="view-table"></div>
+        <div class="row-fluid">
+            <div class="span6">                
+                <canvas id="rfm-canvas" width=800 height=600 style='width:400px;height:300px'></canvas>                
+
+                <!--<img class="small" src="dummy.jpg" -->
+                <!--alt="Image not found" -->
+                <!--onError="this.onerror=null;this.src='static/Figure_1.png?'+new Date().getTime();" />-->
+            </div>                            
+        </div>
+
+    </div>
+</div>
+
+<!-- view columns start -->
+<div class="view_columns-view">
+    <div class="row">
+        <div class="col-5">
+            <p style="margin-left: 14px">Available columns</p>
+            <div class="left-table outline" style="height: 500px;"></div>
+        </div>
+        <div class="col-auto">
+            <div class="central-btns-down">
+                <button type="button" id="right-btn" class="btn btn-outline-success">
+                    <i class="bi bi-arrow-right"></i>
+                </button>
+            </div>
+            <div class="central-btns-up">
+                <button type="button" id="left-btn" class="btn btn-outline-danger">
+                    <i class="bi bi-arrow-left"></i>
+                </button>
+            </div>
+        </div>
+        <div class="col-5 fixed">
+            <p>Selected columns</p>
+            <div class="right-table outline"></div>
+            <div class="text-center">
+                <button type="button" id="down-btn" class="btn btn-outline-secondary">
+                    <i class="bi bi-arrow-down"></i>
+                </button>
+                <button type="button" id="up-btn" class="btn btn-outline-secondary">
+                    <i class="bi bi-arrow-up"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="alert alert-secondary mx-3" role="alert">
+        <h5 class="alert-heading">How export works?</h5>
+        Click to "Export (xlsx) button will export selected rows from table and selected columns on right side table above...
+    </div>
+        
+    <div class="form-footer">
+        <p id="seleted_rows_info"></p>
+        <button type=button id="export_xlsx_btn" class="btn btn-success">
+            <i class="bi bi-file-earmark-excel"></i>&nbsp; Export (xlsx)
+        </button>
+        <button type="button" id="ok-btn" class="btn btn-primary">
+            <i class="bi bi-check-square"></i>&nbsp; Apply columns
+        </button>
+        <button type="button" id="cancel-btn" class="btn btn-secondary" style="margin-right: 30px">
+            <i class="bi bi-x-square"></i>&nbsp; Close
+        </button>
+    </div>
+</div>
+<!-- view column end -->
+
+<div class="orders-order_details-edit">
+    <div class="form-body">
+        <div class="row">
+            <div id="product_div" class="col-md-12"></div>
+            <div id="product_stock_info" class="alert alert-primary" role="alert">
+                Product quantity info! 
+            </div>
+            <div id="fields_div" class="col-md-12"></div>
+        </div>
+    </div>
+    <div class="form-footer">
+        <button type="button" id="ok-btn" class="btn btn-primary">
+            <i class="bi bi-check-square"></i> OK<small class="muted">&nbsp;[Ctrl+Enter]</small>
+        </button>
+        <button type="button" id="cancel-btn" class="btn btn-secondary">
+            <i class="bi bi-x-square"></i> Cancel
+        </button>
+    </div>
+</div>
+
+<!--<div class="customers-edit">-->
+<!--    <div class="form-header">            -->
+<!--        <button type="button" id="ok-btn" class="btn btn-primary">-->
+<!--            <i class="bi bi-check-square"></i> OK<small class="muted">&nbsp;[Ctrl+Enter]</small>-->
+<!--        </button>-->
+<!--        <button type="button" id="cancel-btn" class="btn btn-secondary">-->
+<!--            <i class="bi bi-x-square"></i> Cancel-->
+<!--        </button>-->
+<!--        <button type="button" id="send_email_btn" class="btn btn-success">-->
+<!--            <i class="bi bi-envelope"></i> Send email-->
+<!--        </button>-->
+<!--    </div>-->
+<!--    <div class="form-body">-->
+<!--        <ul class="nav nav-tabs" id="customer-tabs" role="tablist">-->
+<!--            <li class="nav-item">-->
+<!--                <a class="nav-link active" href="#general-tab">General</a>-->
+<!--            </li>-->
+<!--            <li class="nav-item">-->
+<!--                <a class="nav-link" href="#orders-tab">Orders</a>-->
+<!--            </li>-->
+<!--        </ul>-->
+        
+<!--        <div class="tab-content">-->
+<!--            <div class="tab-pane active" id="general-tab">-->
+<!--                <div class="row">-->
+<!--                    <div id="top-row" class="col-md-6"></div>-->
+<!--                    <p><span class="badge bg-primary">Primary Contact</span></p>-->
+<!--                    <div id="primary-contacts" class="col-md-6"></div>-->
+<!--                    <p><span class="badge bg-primary">Phone Numbers</span></p>-->
+<!--                    <div id="phone-numbers" class="col-md-6"></div>-->
+<!--                    <p><span class="badge bg-primary">Address</span></p>-->
+<!--                    <div id="address-data" class="col-md-6"></div>-->
+<!--                    <div id="web-data" class="col-md-6"></div>-->
+<!--                    <div id="notes-data" class="col-md-6"></div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            <div class="tab-pane" id="orders-tab">-->
+<!--                <div class="edit-detail"></div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</div>-->
+
+<!-- Inventory list start -->
+<div class="inventory_list-view">
+    <div class="form-header">
+        <button type="button" id="purchase_btn" class="btn btn-primary">
+            <i class="bi bi-cart-check"></i>&nbsp; Purchase
+        </button>
+        <button type="button" id="filter_inv_to_reoder_btn" class="btn btn-primary">
+            <i class="bi bi-filter"></i>&nbsp; Show products to reorder
+        </button>
+        <div class="position-absolute top-right">
+            <button id="export_inventory_btn" class="btn btn-success" type="button">
+                <i class="bi-download"></i>&nbsp; Download xlsx
+            </button>
+        </div>
+    </div>
+    <div class="card-body form-body">
+        <div class="view-table"></div>
+    </div>
+</div>
+<!-- Inventory list end -->
+
+<!--<div class="markdown-container"></div>-->
+
+<div class="introduction-view">
+    <div class="container">
+        <h3 class="alert-heading">🚀 How to scaffold an app from scratch!</h3>
+        <div id="asci-container"></div>              
+        <div class="markdown-container">
+        </div>
+    </div>
+</div>
+
+<div class="er_diagram-view">
+    <div class="diagram-container" id="diagram-container">
+        <!--<div class="container">-->
+            <pre class="mermaid">
+            </pre>
+        <!--</div>-->
+    </div>
+</div>
