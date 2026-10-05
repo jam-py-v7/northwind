@@ -1,0 +1,9 @@
+Xlsxwriter
+openpyxl
+py_password_strength
+pandas
+matplotlib
+numpy
+datetime
+pprint
+secrets
